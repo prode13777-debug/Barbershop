@@ -1,1 +1,106 @@
+/* Общие стили */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+.container { width: 90%; max-width: 1200px; margin: auto; }
+h1, h2 { text-align: center; margin-bottom: 20px; }
 
+/* Header */
+.header {
+  background: #000;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { font-weight: 700; font-size: 24px; color: #f36; }
+.logo span { color: #fff; }
+.nav { text-align: right; }
+.nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav a:hover { color: #f36; }
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1605497788044-5fddf21e8f1c?auto=format&fit=crop&w=1600&q=80') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.hero h1 { font-size: 48px; margin-bottom: 10px; }
+.hero p { font-size: 18px; margin-bottom: 20px; }
+.btn {
+  background: #f36;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn:hover { background: #ff4f87; transform: scale(1.05); }
+
+/* Sections */
+.section { padding: 60px 0; }
+.section.dark { background: #1a1a1a; }
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+
+/* Prices */
+.prices { max-width: 500px; margin: auto; }
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #444;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 40px 0;
+}
+.footer a { color: #f36; margin: 0 8px; text-decoration: none; }
+.copy { margin-top: 20px; font-size: 14px; color: #aaa; }
+
+/* Анимация */
+.hero h1, .hero p, .btn, .section, .card, .price-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .cards { flex-direction: column; align-items: center; }
+}
