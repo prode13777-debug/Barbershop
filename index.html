@@ -14,17 +14,15 @@
   <a class="skip-link" href="#main">Пропустить к контенту</a>
 
   <!-- Header / Nav -->
-  <header class="site-header" id="site-header" role="banner">
-    <div class="nav container">
-      <div class="logo">
-        <a href="#top">Barbershop <strong>Legend</strong></a>
-      </div>
+  <header id="site-header" class="site-header" role="banner">
+    <div class="container nav">
+      <div class="logo"><a href="#top">Barbershop <strong>Legend</strong></a></div>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-        <span class="hamburger"></span>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true"></span>
       </button>
 
-      <nav class="nav-menu" id="nav-menu" aria-label="Главное меню">
+      <nav id="nav-menu" class="nav-menu" aria-label="Главное меню">
         <ul>
           <li><a href="#top">Главная</a></li>
           <li><a href="#about">О нас</a></li>
@@ -32,6 +30,7 @@
           <li><a href="#prices">Цены</a></li>
           <li><a href="#team">Мастера</a></li>
           <li><a href="#offers">Акции</a></li>
+          <li><a href="#gallery">Галерея</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
       </nav>
@@ -40,31 +39,48 @@
 
   <main id="main">
     <!-- HERO -->
-    <section id="top" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content container">
+    <section id="top" class="hero" aria-label="Главный экран">
+      <!-- background image element: tries local asset first, falls back to Unsplash external if missing -->
+      <img
+        class="hero-bg"
+        src="assets/images/hero.jpg"
+        alt=""
+        aria-hidden="true"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80';"
+        loading="eager"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner container">
         <h1 class="hero-title">Barbershop Legend</h1>
         <p class="hero-sub">Стрижки, уход и стиль для настоящих мужчин</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contacts">Записаться</a>
-          <a class="btn btn-ghost" href="#offers">Узнать условия</a>
+          <a class="btn btn-outline" href="#offers">Узнать акции</a>
         </div>
       </div>
-      <a class="scroll-indicator" href="#about" aria-label="Прокрутить вниз"></a>
+
+      <a class="scroll-down" href="#about" aria-label="Прокрутить вниз"></a>
     </section>
 
     <!-- About -->
     <section id="about" class="section about">
-      <div class="container grid about-grid">
-        <div class="about-text">
+      <div class="container about-grid">
+        <div class="about-card card">
           <h2 class="section-title">О нас</h2>
-          <p>Barbershop Legend — это место, где классика встречается с современным подходом. Мы создаём аккуратные образы, которые подчёркивают характер и стиль.</p>
-          <p>Наши мастера используют профессиональные инструменты и премиальные средства. Атмосфера — мужская, уважительная и дружелюбная.</p>
-          <p>Приходите за свежей стрижкой, идеальной бородой и наслаждением от качественного сервиса.</p>
+          <p>Barbershop Legend — это пространство для уверенных в себе мужчин. Мы объединяем традиционные техники и современные тренды: от классической мужской стрижки и бритья до ухода за бородой и полного преображения образа.</p>
+          <p>Наши мастера — опытные барберы, которые внимательно слушают и умеют предложить лучший вариант, учитывая форму головы, густоту волос и образ жизни.</p>
+          <ul class="about-features">
+            <li>Премиальные инструменты и средства</li>
+            <li>Индивидуальный подход</li>
+            <li>Атмосфера уюта и мужского стиля</li>
+          </ul>
         </div>
-        <div class="about-media">
-          <img src="https://images.unsplash.com/photo-1520975911351-4b13c5d7ee3b?auto=format&fit=crop&w=900&q=60" alt="Интерьер барбершопа" />
-        </div>
+
+        <figure class="about-media">
+          <img src="assets/images/about-1.jpg" alt="Интерьер барбершопа" loading="lazy"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1520975911351-4b13c5d7ee3b?auto=format&fit=crop&w=900&q=70';" />
+        </figure>
       </div>
     </section>
 
@@ -72,31 +88,31 @@
     <section id="services" class="section">
       <div class="container">
         <h2 class="section-title">Услуги</h2>
-        <p class="section-intro">Мы предлагаем полный спектр барбер‑услуг — от классики до современных техник.</p>
+        <p class="section-intro">Полный набор барберских услуг — от классики до современных экспериментов.</p>
 
-        <div class="grid services-grid">
-          <article class="card service-card">
-            <div class="card-icon">💇‍♂️</div>
-            <h3 class="card-title">Мужская стрижка</h3>
-            <p class="card-text">Индивидуальная стрижка под форму головы и стиль жизни.</p>
+        <div class="services-grid">
+          <article class="card service">
+            <div class="service-icon">💇‍♂️</div>
+            <h3>Мужская стрижка</h3>
+            <p>Персональная стрижка с учётом формы головы и образа.</p>
           </article>
 
-          <article class="card service-card">
-            <div class="card-icon">🪒</div>
-            <h3 class="card-title">Бритьё опасной бритвой</h3>
-            <p class="card-text">Классическое бритьё с горячим компрессом и ухаживающими средствами.</p>
+          <article class="card service">
+            <div class="service-icon">🪒</div>
+            <h3>Бритьё</h3>
+            <p>Классическое бритьё опасной бритвой с горячим компрессом.</p>
           </article>
 
-          <article class="card service-card">
-            <div class="card-icon">🧔</div>
-            <h3 class="card-title">Уход за бородой</h3>
-            <p class="card-text">Коррекция, моделирование и уходовые процедуры.</p>
+          <article class="card service">
+            <div class="service-icon">🧔</div>
+            <h3>Уход за бородой</h3>
+            <p>Коррекция, моделирование и уходовые процедуры.</p>
           </article>
 
-          <article class="card service-card">
-            <div class="card-icon">✂️</div>
-            <h3 class="card-title">Стиль и укладка</h3>
-            <p class="card-text">Завершение образа: укладка, фиксация и советы по уходу.</p>
+          <article class="card service">
+            <div class="service-icon">✂️</div>
+            <h3>Стиль и укладка</h3>
+            <p>Финальная укладка, рекомендации по поддержанию образа.</p>
           </article>
         </div>
       </div>
@@ -105,23 +121,23 @@
     <!-- Prices -->
     <section id="prices" class="section">
       <div class="container">
-        <h2 class="section-title">Прайс-лист</h2>
-        <div class="price-cards">
-          <div class="price-card">
-            <h4>Мужская стрижка</h4>
-            <div class="price">1500 ₽</div>
+        <h2 class="section-title">Прайс</h2>
+        <div class="price-grid">
+          <div class="price-card card">
+            <div class="price-name">Мужская стрижка</div>
+            <div class="price-value">1500 ₽</div>
           </div>
-          <div class="price-card">
-            <h4>Бритьё</h4>
-            <div class="price">1200 ₽</div>
+          <div class="price-card card">
+            <div class="price-name">Бритьё</div>
+            <div class="price-value">1200 ₽</div>
           </div>
-          <div class="price-card">
-            <h4>Уход за бородой</h4>
-            <div class="price">900 ₽</div>
+          <div class="price-card card">
+            <div class="price-name">Уход за бородой</div>
+            <div class="price-value">900 ₽</div>
           </div>
-          <div class="price-card">
-            <h4>Укладка / стиль</h4>
-            <div class="price">700 ₽</div>
+          <div class="price-card card">
+            <div class="price-name">Укладка / стиль</div>
+            <div class="price-value">700 ₽</div>
           </div>
         </div>
       </div>
@@ -130,43 +146,46 @@
     <!-- Team -->
     <section id="team" class="section">
       <div class="container">
-        <h2 class="section-title">Наша команда</h2>
-        <p class="section-intro">Профессиональные барберы с опытом и тонким вкусом.</p>
+        <h2 class="section-title">Мастера</h2>
+        <p class="section-intro">Наши барберы — мастера с опытом и индивидуальным стилем.</p>
 
-        <div class="grid team-grid">
-          <article class="card team-card">
-            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+1" alt="Барбер Иван" />
-            <h3 class="card-title">Иван П.</h3>
-            <p class="card-text">Главный барбер</p>
+        <div class="team-grid">
+          <article class="card team-member">
+            <img class="team-photo" src="assets/images/team-1.jpg" alt="Иван П." loading="lazy"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=70';" />
+            <h3>Иван П.</h3>
+            <p class="muted">Главный барбер</p>
           </article>
 
-          <article class="card team-card">
-            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+2" alt="Барбер Алексей" />
-            <h3 class="card-title">Алексей С.</h3>
-            <p class="card-text">Барбер</p>
+          <article class="card team-member">
+            <img class="team-photo" src="assets/images/team-2.jpg" alt="Алексей С." loading="lazy"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=800&q=70';" />
+            <h3>Алексей С.</h3>
+            <p class="muted">Барбер</p>
           </article>
 
-          <article class="card team-card">
-            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+3" alt="Барбер Дмитрий" />
-            <h3 class="card-title">Дмитрий К.</h3>
-            <p class="card-text">Барбер</p>
+          <article class="card team-member">
+            <img class="team-photo" src="assets/images/team-3.jpg" alt="Дмитрий К." loading="lazy"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=800&q=70';" />
+            <h3>Дмитрий К.</h3>
+            <p class="muted">Барбер</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Offers -->
-    <section id="offers" class="section offers-section">
+    <section id="offers" class="section">
       <div class="container">
-        <h2 class="section-title">Акции и специальные предложения</h2>
+        <h2 class="section-title">Акции</h2>
         <div class="offers-grid">
-          <div class="offer-card">
-            <div class="offer-badge">-20%</div>
-            <h3>Сезонная скидка на стрижки</h3>
-            <p>Заходите в будние дни и получите скидку на мужскую стрижку.</p>
+          <div class="offer card">
+            <span class="badge">-20%</span>
+            <h3>Скидка в будние дни</h3>
+            <p>Снижение цены на стрижки в будние дни с 10:00 до 16:00.</p>
           </div>
-          <div class="offer-card">
-            <div class="offer-badge">БОНУС</div>
+          <div class="offer card">
+            <span class="badge">БОНУС</span>
             <h3>Первый визит</h3>
             <p>При первом посещении — бесплатный уход за бородой при стрижке.</p>
           </div>
@@ -177,70 +196,71 @@
     <!-- Gallery -->
     <section id="gallery" class="section">
       <div class="container">
-        <h2 class="section-title">Галерея работ</h2>
-        <p class="section-intro">Небольшая подборка наших работ</p>
+        <h2 class="section-title">Галерея</h2>
+        <p class="section-intro">Подборка последних работ — кликайте для увеличения.</p>
 
-        <div class="gallery-slider" id="gallery-slider">
+        <div class="gallery-wrap">
           <button class="glider-btn prev" aria-label="Предыдущее">‹</button>
-          <div class="glider-track">
-            <div class="glide-item"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=60" alt="Работа 1"></div>
-            <div class="glide-item"><img src="https://images.unsplash.com/photo-1544213456-bf3b46f3a5e3?auto=format&fit=crop&w=1200&q=60" alt="Работа 2"></div>
-            <div class="glide-item"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=60" alt="Работа 3"></div>
-            <div class="glide-item"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=60" alt="Работа 4"></div>
+          <div class="glider-track" id="glider-track">
+            <div class="glide-item"><img src="assets/images/gallery-1.jpg" alt="Работа 1" loading="lazy"
+                                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=70';" /></div>
+            <div class="glide-item"><img src="assets/images/gallery-2.jpg" alt="Работа 2" loading="lazy"
+                                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544213456-bf3b46f3a5e3?auto=format&fit=crop&w=1200&q=70';" /></div>
+            <div class="glide-item"><img src="assets/images/gallery-3.jpg" alt="Работа 3" loading="lazy"
+                                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=70';" /></div>
+            <div class="glide-item"><img src="assets/images/gallery-4.jpg" alt="Работа 4" loading="lazy"
+                                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=70';" /></div>
           </div>
           <button class="glider-btn next" aria-label="Следующее">›</button>
         </div>
       </div>
     </section>
 
-    <!-- Contacts / Booking -->
-    <section id="contacts" class="section contacts-section">
-      <div class="container">
-        <h2 class="section-title">Контакты и запись</h2>
-        <div class="grid contacts-grid">
-          <div class="contact-info">
-            <p><strong>Телефон:</strong> <a href="tel:+79998887766">+7 (999) 888-77-66</a></p>
-            <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 7</p>
-            <p><strong>Время работы:</strong> Пн–Сб: 09:00–21:00</p>
+    <!-- Contacts -->
+    <section id="contacts" class="section contacts">
+      <div class="container contacts-grid">
+        <div class="contact-info card">
+          <h2 class="section-title">Контакты</h2>
+          <p><strong>Телефон:</strong> <a href="tel:+79998887766">+7 (999) 888-77-66</a></p>
+          <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 7</p>
+          <p><strong>Время работы:</strong> Пн–Сб: 09:00–21:00</p>
 
-            <div class="socials">
-              <a class="social-link" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-              <a class="social-link" href="https://t.me" target="_blank" rel="noopener">Telegram</a>
-            </div>
-          </div>
-
-          <div class="contact-form-card card">
-            <form id="booking-form" class="booking-form" novalidate>
-              <label for="name">Имя</label>
-              <input id="name" name="name" type="text" required placeholder="Ваше имя" />
-
-              <label for="phone">Телефон</label>
-              <input id="phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__" />
-
-              <label for="service">Услуга</label>
-              <select id="service" name="service">
-                <option>Мужская стрижка</option>
-                <option>Бритьё</option>
-                <option>Уход за бородой</option>
-                <option>Укладка</option>
-              </select>
-
-              <label for="date">Предпочтительная дата</label>
-              <input id="date" name="date" type="date" />
-
-              <button type="submit" class="btn btn-primary">Отправить заявку</button>
-              <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
-            </form>
+          <div class="socials">
+            <a class="social" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a class="social" href="https://t.me" target="_blank" rel="noopener">Telegram</a>
           </div>
         </div>
 
-        <div class="map-embed">
-          <!-- Плейсхолдер карты (замените на реальный iframe Google Maps при публикации) -->
+        <div class="booking card">
+          <h3>Онлайн-запись</h3>
+          <form id="booking-form" class="booking-form" novalidate>
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" placeholder="Ваше имя" required>
+
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+
+            <label for="service">Услуга</label>
+            <select id="service" name="service">
+              <option>Мужская стрижка</option>
+              <option>Бритьё</option>
+              <option>Уход за бородой</option>
+              <option>Укладка</option>
+            </select>
+
+            <label for="date">Дата</label>
+            <input id="date" name="date" type="date">
+
+            <button type="submit" class="btn btn-primary">Отправить</button>
+            <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="map card full-width">
           <iframe
             src="https://www.google.com/maps?q=Москва,ул+Примерная,7&output=embed"
-            aria-label="Карта местоположения"
-            loading="lazy"
-          ></iframe>
+            aria-label="Карта"
+            loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -250,15 +270,22 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <div class="footer-brand">Barbershop <strong>Legend</strong></div>
-        <div class="legal">© 2025 Barbershop Legend. Все права защищены.</div>
+        <div class="brand">Barbershop <strong>Legend</strong></div>
+        <div class="legal">© 2025 Barbershop Legend</div>
       </div>
       <div class="footer-right">
         <a href="#" class="footer-link">Политика конфиденциальности</a>
-        <a href="#" class="footer-link">Условия обслуживания</a>
+        <a href="#" class="footer-link">Условия</a>
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Закрыть">✕</button>
+    <img id="lightbox-image" class="lightbox-image" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
 
   <script defer src="assets/script.js"></script>
 </body>
