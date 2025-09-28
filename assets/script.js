@@ -1,18 +1,50 @@
-// Плавное появление блоков при скролле
-function reveal() {
-  const elements = document.querySelectorAll('.section, .hero h1, .hero p, .btn, .card, .price-item');
-  const trigger = window.innerHeight * 0.85;
+// script.js — smooth anchors, mobile nav toggle, intersection reveal
 
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < trigger) el.classList.add('visible');
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth anchor scrolling for in-page links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').slice(1);
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // For accessibility: focus target
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
+    });
   });
-}
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('DOMContentLoaded', () => {
-  reveal();
-  // сразу показываем главный заголовок, текст и кнопку Hero
-  document.querySelectorAll('.hero h1, .hero p, .btn')
-    .forEach(el => el.classList.add('visible'));
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.getElementById('nav-list');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      if (!expanded) {
+        navList.style.display = 'flex';
+        navList.style.flexDirection = 'column';
+        navList.style.gap = '12px';
+      } else {
+        navList.style.display = '';
+      }
+    });
+  }
+
+  // IntersectionObserver to reveal sections
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optionally unobserve to improve performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.section').forEach(section => observer.observe(section));
 });
