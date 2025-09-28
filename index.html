@@ -1,93 +1,265 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barber Shop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Barbershop Legend</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Пропустить к контенту</a>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">Barber<span>Shop</span></div>
-      <nav class="nav">
-        <a href="#hero">Главная</a>
-        <a href="#about">О нас</a>
-        <a href="#services">Услуги</a>
-        <a href="#prices">Цены</a>
-        <a href="#contacts">Контакты</a>
+  <!-- Header / Nav -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="nav container">
+      <div class="logo">
+        <a href="#top">Barbershop <strong>Legend</strong></a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Главное меню">
+        <ul>
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#team">Мастера</a></li>
+          <li><a href="#offers">Акции</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <h1>Современный Барбершоп</h1>
-    <p>Стильные стрижки и уход для настоящих мужчин</p>
-    <a href="#services" class="btn">Наши услуги</a>
-  </section>
-
-  <!-- About -->
-  <section class="section dark" id="about">
-    <div class="container">
-      <h2>О нас</h2>
-      <p>Мы создаём стиль и атмосферу, в которой каждый клиент чувствует себя уверенно. Наши мастера — профессионалы своего дела.</p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="container">
-      <h2>Наши услуги</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Стрижка</h3>
-          <p>Индивидуальный подход к каждому клиенту.</p>
-        </div>
-        <div class="card">
-          <h3>Бритьё</h3>
-          <p>Классическое и современное бритьё опасной бритвой.</p>
-        </div>
-        <div class="card">
-          <h3>Уход</h3>
-          <p>Комплексные процедуры для волос и бороды.</p>
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">Barbershop Legend</h1>
+        <p class="hero-sub">Стрижки, уход и стиль для настоящих мужчин</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacts">Записаться</a>
+          <a class="btn btn-ghost" href="#offers">Узнать условия</a>
         </div>
       </div>
-    </div>
-  </section>
+      <a class="scroll-indicator" href="#about" aria-label="Прокрутить вниз"></a>
+    </section>
 
-  <!-- Prices -->
-  <section class="section dark" id="prices">
-    <div class="container">
-      <h2>Цены</h2>
-      <div class="prices">
-        <div class="price-item"><span>Мужская стрижка</span><span>1200 ₽</span></div>
-        <div class="price-item"><span>Стрижка бороды</span><span>800 ₽</span></div>
-        <div class="price-item"><span>Бритьё опасной бритвой</span><span>1000 ₽</span></div>
-        <div class="price-item"><span>Комплекс "Стрижка+Борода"</span><span>1800 ₽</span></div>
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="container grid about-grid">
+        <div class="about-text">
+          <h2 class="section-title">О нас</h2>
+          <p>Barbershop Legend — это место, где классика встречается с современным подходом. Мы создаём аккуратные образы, которые подчёркивают характер и стиль.</p>
+          <p>Наши мастера используют профессиональные инструменты и премиальные средства. Атмосфера — мужская, уважительная и дружелюбная.</p>
+          <p>Приходите за свежей стрижкой, идеальной бородой и наслаждением от качественного сервиса.</p>
+        </div>
+        <div class="about-media">
+          <img src="https://images.unsplash.com/photo-1520975911351-4b13c5d7ee3b?auto=format&fit=crop&w=900&q=60" alt="Интерьер барбершопа" />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contacts -->
-  <section class="section" id="contacts">
-    <div class="container">
-      <h2>Контакты</h2>
-      <p>Мы находимся по адресу: Москва, ул. Барбершопа, 10</p>
-      <p>Телефон: +7 (999) 123-45-67</p>
-      <a href="tel:+79991234567" class="btn">Позвонить</a>
-    </div>
-  </section>
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">Услуги</h2>
+        <p class="section-intro">Мы предлагаем полный спектр барбер‑услуг — от классики до современных техник.</p>
+
+        <div class="grid services-grid">
+          <article class="card service-card">
+            <div class="card-icon">💇‍♂️</div>
+            <h3 class="card-title">Мужская стрижка</h3>
+            <p class="card-text">Индивидуальная стрижка под форму головы и стиль жизни.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-icon">🪒</div>
+            <h3 class="card-title">Бритьё опасной бритвой</h3>
+            <p class="card-text">Классическое бритьё с горячим компрессом и ухаживающими средствами.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-icon">🧔</div>
+            <h3 class="card-title">Уход за бородой</h3>
+            <p class="card-text">Коррекция, моделирование и уходовые процедуры.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-icon">✂️</div>
+            <h3 class="card-title">Стиль и укладка</h3>
+            <p class="card-text">Завершение образа: укладка, фиксация и советы по уходу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prices -->
+    <section id="prices" class="section">
+      <div class="container">
+        <h2 class="section-title">Прайс-лист</h2>
+        <div class="price-cards">
+          <div class="price-card">
+            <h4>Мужская стрижка</h4>
+            <div class="price">1500 ₽</div>
+          </div>
+          <div class="price-card">
+            <h4>Бритьё</h4>
+            <div class="price">1200 ₽</div>
+          </div>
+          <div class="price-card">
+            <h4>Уход за бородой</h4>
+            <div class="price">900 ₽</div>
+          </div>
+          <div class="price-card">
+            <h4>Укладка / стиль</h4>
+            <div class="price">700 ₽</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section">
+      <div class="container">
+        <h2 class="section-title">Наша команда</h2>
+        <p class="section-intro">Профессиональные барберы с опытом и тонким вкусом.</p>
+
+        <div class="grid team-grid">
+          <article class="card team-card">
+            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+1" alt="Барбер Иван" />
+            <h3 class="card-title">Иван П.</h3>
+            <p class="card-text">Главный барбер</p>
+          </article>
+
+          <article class="card team-card">
+            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+2" alt="Барбер Алексей" />
+            <h3 class="card-title">Алексей С.</h3>
+            <p class="card-text">Барбер</p>
+          </article>
+
+          <article class="card team-card">
+            <img class="team-photo" src="https://via.placeholder.com/400x400?text=Barber+3" alt="Барбер Дмитрий" />
+            <h3 class="card-title">Дмитрий К.</h3>
+            <p class="card-text">Барбер</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers -->
+    <section id="offers" class="section offers-section">
+      <div class="container">
+        <h2 class="section-title">Акции и специальные предложения</h2>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <div class="offer-badge">-20%</div>
+            <h3>Сезонная скидка на стрижки</h3>
+            <p>Заходите в будние дни и получите скидку на мужскую стрижку.</p>
+          </div>
+          <div class="offer-card">
+            <div class="offer-badge">БОНУС</div>
+            <h3>Первый визит</h3>
+            <p>При первом посещении — бесплатный уход за бородой при стрижке.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">Галерея работ</h2>
+        <p class="section-intro">Небольшая подборка наших работ</p>
+
+        <div class="gallery-slider" id="gallery-slider">
+          <button class="glider-btn prev" aria-label="Предыдущее">‹</button>
+          <div class="glider-track">
+            <div class="glide-item"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=60" alt="Работа 1"></div>
+            <div class="glide-item"><img src="https://images.unsplash.com/photo-1544213456-bf3b46f3a5e3?auto=format&fit=crop&w=1200&q=60" alt="Работа 2"></div>
+            <div class="glide-item"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=60" alt="Работа 3"></div>
+            <div class="glide-item"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=60" alt="Работа 4"></div>
+          </div>
+          <button class="glider-btn next" aria-label="Следующее">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts / Booking -->
+    <section id="contacts" class="section contacts-section">
+      <div class="container">
+        <h2 class="section-title">Контакты и запись</h2>
+        <div class="grid contacts-grid">
+          <div class="contact-info">
+            <p><strong>Телефон:</strong> <a href="tel:+79998887766">+7 (999) 888-77-66</a></p>
+            <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 7</p>
+            <p><strong>Время работы:</strong> Пн–Сб: 09:00–21:00</p>
+
+            <div class="socials">
+              <a class="social-link" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+              <a class="social-link" href="https://t.me" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+
+          <div class="contact-form-card card">
+            <form id="booking-form" class="booking-form" novalidate>
+              <label for="name">Имя</label>
+              <input id="name" name="name" type="text" required placeholder="Ваше имя" />
+
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__" />
+
+              <label for="service">Услуга</label>
+              <select id="service" name="service">
+                <option>Мужская стрижка</option>
+                <option>Бритьё</option>
+                <option>Уход за бородой</option>
+                <option>Укладка</option>
+              </select>
+
+              <label for="date">Предпочтительная дата</label>
+              <input id="date" name="date" type="date" />
+
+              <button type="submit" class="btn btn-primary">Отправить заявку</button>
+              <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <!-- Плейсхолдер карты (замените на реальный iframe Google Maps при публикации) -->
+          <iframe
+            src="https://www.google.com/maps?q=Москва,ул+Примерная,7&output=embed"
+            aria-label="Карта местоположения"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="copy">© 2025 BarberShop. Все права защищены.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">Barbershop <strong>Legend</strong></div>
+        <div class="legal">© 2025 Barbershop Legend. Все права защищены.</div>
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link">Политика конфиденциальности</a>
+        <a href="#" class="footer-link">Условия обслуживания</a>
+      </div>
     </div>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <script defer src="assets/script.js"></script>
 </body>
 </html>
